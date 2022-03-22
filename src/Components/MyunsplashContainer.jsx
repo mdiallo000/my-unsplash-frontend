@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import MyUnsplash from './MyUnsplash';
 
 function MyunsplashContainer() {
   const [data, Setdata] = useState('');
@@ -14,7 +15,7 @@ function MyunsplashContainer() {
 
   return (
     <div>
-      <h1 style={{ textAlling: 'center' }}>My unsplash</h1>
+      <MyUnsplash data={data} />
     </div>
   );
 }
