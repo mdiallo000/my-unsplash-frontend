@@ -7,13 +7,20 @@ const useFetch = (url) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let data = await fetch(url);
+      try {
+        let data = await fetch(url);
 
-      let response = await data.json();
-      SetData(response);
-      SetLoading(false);
+        let response = await data.json();
+        SetData(response);
+        SetLoading(false);
+      } catch (error) {
+        SetHandleError(error);
+        SetLoading(false);
+      }
     };
-  });
+
+    fetchData();
+  }, [url]);
   return [data, handelErro, isloading];
 };
 export default useFetch;
