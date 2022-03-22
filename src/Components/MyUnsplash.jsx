@@ -1,10 +1,10 @@
 import React from 'react';
 
-function MyUnsplash({ data }) {
+function MyUnsplash({ dataValues }) {
   return (
     <div>
       My UnSplash
-      <div></div>
+      <div>dataValues.map((val))</div>
     </div>
   );
 }
