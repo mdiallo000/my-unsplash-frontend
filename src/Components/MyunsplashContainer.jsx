@@ -1,19 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import MyUnsplash from './MyUnsplash';
-
+import useFetch from '../CustomHooks/useFetch';
 function MyunsplashContainer() {
-  const [data, Setdata] = useState([]);
-
-  useEffect(() => {
-    async function fetchMyApi() {
-      let data = await fetch('http://localhost:1337/api/unsplashes');
-
-      let response = await data.json();
-
-      Setdata(response);
-    }
-    fetchMyApi();
-  }, []);
+  const myApiUrl = ` http://localhost:1337/api/unsplashes/`;
+  const [data, ApiErro, loadingStatus] = useFetch(myApiUrl);
 
   return (
     <div>
