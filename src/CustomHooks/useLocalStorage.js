@@ -5,3 +5,9 @@ const getLocalStorageItems = (key, storedValues) => {
     ? JSON.parse(localStorage.getItem(key))
     : storedValues;
 };
+
+export const useLocaStorage = (key, storedValues) => {
+  const [value, setvalue] = useState(() =>
+    getLocalStorageItems(key, storedValues)
+  );
+};
